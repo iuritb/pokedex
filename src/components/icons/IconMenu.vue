@@ -1,0 +1,32 @@
+<template>
+  <svg
+    :width="width"
+    :height="height"
+    viewBox="0 0 25 19"
+    fill="#fff"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line y1="1.5" x2="25" y2="1.5" stroke="white" stroke-width="3" />
+    <line y1="9.5" x2="25" y2="9.5" stroke="white" stroke-width="3" />
+    <line y1="17.5" x2="25" y2="17.5" stroke="white" stroke-width="3" />
+  </svg>
+</template>
+<script>
+export default {
+  name: "icon-menu",
+  props: {
+    color: {
+      type: String,
+      default: "none",
+    },
+    width: {
+      type: Number,
+      default: 24,
+    },
+    height: {
+      type: Number,
+      default: 24,
+    },
+  },
+};
+</script>
