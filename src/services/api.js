@@ -15,7 +15,7 @@ let apiPKM = {
   },
   //list pokemon by id
   getPokemonById: (pkmId) => {
-    return apiRequest.get(`/pokemon/${pkmId}/`)
+    return apiRequest.get(`/pokemon/${pkmId}`)
   }
 };
 

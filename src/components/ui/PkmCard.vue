@@ -18,8 +18,10 @@
 
       <v-list-item-content>
         <v-list-item-title class="card-pokemon__title">
-          {{ name }}</v-list-item-title
-        >
+          <span @click="redirect(`pokemon/${pkmId}`)">
+            {{ name }}
+          </span>
+        </v-list-item-title>
         <v-list-item-subtitle>
           <v-row>
             <template v-for="(type, index) in pokemon.types">
@@ -47,7 +49,6 @@ export default {
   },
   props: {
     pkmId: {
-      type: Number,
       required: true,
     },
     name: {
@@ -63,7 +64,7 @@ export default {
       },
     };
   },
-  mounted() {
+  created() {
     this.loadPokemon(this.pkmId);
   },
   methods: {
@@ -72,6 +73,9 @@ export default {
         this.pokemon.types = data.types;
         this.pokemon.sprite = data.sprites.front_default;
       });
+    },
+    redirect(path) {
+      this.$router.push(`/${path}`);
     },
   },
 };
@@ -87,6 +91,9 @@ export default {
     line-height: 24px;
     text-transform: uppercase;
     text-align: start;
+  }
+  &__title:hover {
+    cursor: pointer;
   }
 }
 </style>
