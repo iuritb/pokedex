@@ -6,7 +6,18 @@ const apiRequest = axios.create({
 });
 
 let apiPKM = {
-  getPokemons: () => {
-      return apiRequest.get('/pokemon?limit=150', )
+  //list 150 first pokemon 
+  getPokemon: () => {
+    return apiRequest.get('/pokemon?limit=24',)
   },
+  getNextPokemon: (nextOffSet) => {
+    return apiRequest.get(`/pokemon?offset=${nextOffSet}&limit=24`)
+  },
+  //list pokemon by id
+  getPokemonById: (pkmId) => {
+    return apiRequest.get(`/pokemon/${pkmId}/`)
+  }
 };
+
+export default apiPKM;
+
