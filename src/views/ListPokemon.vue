@@ -1,6 +1,9 @@
 <template>
   <div class="list-pokemon">
     <div class="list-pokemon__content">
+      <h1>Batatao</h1>
+      <h2>Batata</h2>
+      <h3>batatinha</h3>
       <v-row class="d-flex justify-center align-center">
         <v-col cols="11">
           <v-text-field
